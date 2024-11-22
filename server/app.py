@@ -21,9 +21,9 @@ import os
 app = Flask(__name__)
 
 # Basic configuration
-app.config.update(
+app.config.update( 
     SECRET_KEY='ajali-2',
-    SQLALCHEMY_DATABASE_URI='sqlite:///ajali.db',
+    SQLALCHEMY_DATABASE_URI='postgresql://ajali_6n24_user:dmRedk3XcIbfm1QEDT7RWoOh4fuI0jfp@dpg-ct0d4ci3esus7389uu00-a.oregon-postgres.render.com/ajali_6n24',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
     SESSION_COOKIE_SAMESITE='Lax',
     SESSION_COOKIE_SECURE=False,  # Set to True in production with HTTPS
@@ -349,7 +349,7 @@ api.add_resource(UserDetailResource, '/users/<int:user_id>')
 def after_request(response):
     """Add CORS headers after each request"""
     origin = request.headers.get('Origin')
-    if origin in ['http://localhost:5173']:
+    if origin in ['http://localhost:5174']:
         response.headers['Access-Control-Allow-Origin'] = origin
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
         response.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,OPTIONS'

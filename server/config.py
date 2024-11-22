@@ -16,7 +16,7 @@ class Config:
     SESSION_COOKIE_SAMESITE = 'Lax'
     
     # CORS configuration
-    CORS_ORIGINS = ["http://localhost:5173"]
+    CORS_ORIGINS = ["http://localhost:5174"]
     CORS_SUPPORTS_CREDENTIALS = True
     CORS_ALLOW_HEADERS = ["Content-Type", "Authorization"]
     CORS_EXPOSE_HEADERS = ["Content-Range", "X-Content-Range"]
