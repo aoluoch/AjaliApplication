@@ -38,7 +38,7 @@ app.config.update(
 CORS(app,
     resources={
         r"/*": {
-            "origins": ["http://localhost:5173"],
+            "origins": ["https://ajaliapplication-1-h7di.onrender.com"],
             "methods": ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
             "allow_headers": ["Content-Type", "Authorization"],
             "supports_credentials": True
@@ -349,7 +349,7 @@ api.add_resource(UserDetailResource, '/users/<int:user_id>')
 def after_request(response):
     """Add CORS headers after each request"""
     origin = request.headers.get('Origin')
-    if origin in ['http://localhost:5174']:
+    if origin in ['https://ajaliapplication-1-h7di.onrender.com']:
         response.headers['Access-Control-Allow-Origin'] = origin
         response.headers['Access-Control-Allow-Headers'] = 'Content-Type,Authorization'
         response.headers['Access-Control-Allow-Methods'] = 'GET,PUT,POST,DELETE,OPTIONS'
