@@ -35,7 +35,7 @@ export const NotificationProvider = ({ children }) => {
     checkNotifications();
 
     // Check for notifications every 30 seconds
-    const interval = setInterval(checkNotifications, 30000);
+    const interval = setInterval(checkNotifications, 300000);
     return () => clearInterval(interval);
   }, []);
 

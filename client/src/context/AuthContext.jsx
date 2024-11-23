@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const checkSession = async () => {
     try {
-      const response = await axios.get('/check_session');
+      const response = await axios.get('https://ajaliapplication-isto.onrender.com/check_session');
       setUser(response.data);
     } catch (error) {
       setUser(null);
@@ -24,7 +24,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await axios.post('/login', { email, password });
+      const response = await axios.post('https://ajaliapplication-isto.onrender.com/login', { email, password });
       setUser(response.data.user);
       return response.data;
     } catch (error) {
@@ -35,7 +35,7 @@ export const AuthProvider = ({ children }) => {
 
   const logout = async () => {
     try {
-      await axios.post('/logout');
+      await axios.post('https://ajaliapplication-isto.onrender.com/logout');
       setUser(null);
     } catch (error) {
       console.error('Logout error:', error);
@@ -45,7 +45,7 @@ export const AuthProvider = ({ children }) => {
 
   const register = async (userData) => {
     try {
-      const response = await axios.post('/register', userData);
+      const response = await axios.post('https://ajaliapplication-isto.onrender.com/register', userData);
       return response.data;
     } catch (error) {
       console.error('Registration error:', error);

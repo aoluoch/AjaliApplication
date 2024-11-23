@@ -2,7 +2,7 @@ import axios from './axiosConfig';
 
 export const getAllIncidents = async () => {
   try {
-    const response = await axios.get('/incidents');
+    const response = await axios.get('https://ajaliapplication-isto.onrender.com/incidents');
     return response.data;
   } catch (error) {
     console.error('Error fetching incidents:', error);
@@ -12,7 +12,7 @@ export const getAllIncidents = async () => {
 
 export const createIncident = async (formData) => {
   try {
-    const response = await axios.post('/incidents', formData, {
+    const response = await axios.post('https://ajaliapplication-isto.onrender.com/incidents', formData, {
       headers: {
         'Content-Type': 'multipart/form-data',
       },
@@ -26,7 +26,7 @@ export const createIncident = async (formData) => {
 
 export const updateIncident = async (id, data) => {
   try {
-    const response = await axios.put(`/incidents/${id}`, data);
+    const response = await axios.put(`https://ajaliapplication-isto.onrender.com/incidents/${id}`, data);
     return response.data;
   } catch (error) {
     console.error('Error updating incident:', error);
@@ -36,7 +36,7 @@ export const updateIncident = async (id, data) => {
 
 export const updateIncidentStatus = async (id, status) => {
   try {
-    const response = await axios.put(`/incidents/${id}`, { status });
+    const response = await axios.put(`https://ajaliapplication-isto.onrender.com/incidents/${id}`, { status });
     return response.data;
   } catch (error) {
     console.error('Error updating incident status:', error);
@@ -46,7 +46,7 @@ export const updateIncidentStatus = async (id, status) => {
 
 export const deleteIncident = async (id) => {
   try {
-    await axios.delete(`/incidents/${id}`);
+    await axios.delete(`https://ajaliapplication-isto.onrender.com/incidents/${id}`);
   } catch (error) {
     console.error('Error deleting incident:', error);
     throw error;
@@ -55,7 +55,7 @@ export const deleteIncident = async (id) => {
 
 export const getIncidentById = async (id) => {
   try {
-    const response = await axios.get(`/incidents/${id}`);
+    const response = await axios.get(`https://ajaliapplication-isto.onrender.com/incidents/${id}`);
     return response.data;
   } catch (error) {
     console.error('Error fetching incident:', error);

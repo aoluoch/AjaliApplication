@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'http://localhost:5000';
+const API_URL = 'https://ajaliapplication-isto.onrender.com';
 
 export const getAllUsers = async () => {
   const response = await axios.get(`${API_URL}/users`, {
