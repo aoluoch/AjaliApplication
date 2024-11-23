@@ -26,7 +26,7 @@ app.config.update(
     SQLALCHEMY_DATABASE_URI='postgresql://ajali_6n24_user:dmRedk3XcIbfm1QEDT7RWoOh4fuI0jfp@dpg-ct0d4ci3esus7389uu00-a.oregon-postgres.render.com/ajali_6n24',
     SQLALCHEMY_TRACK_MODIFICATIONS=False,
     SESSION_COOKIE_SAMESITE='Lax',
-    SESSION_COOKIE_SECURE=False,  # Set to True in production with HTTPS
+    SESSION_COOKIE_SECURE=True,  # Set to True in production with HTTPS
     UPLOAD_FOLDER='uploads',
     MAX_CONTENT_LENGTH=100 * 1024 * 1024,  # 100MB max file size
     ALLOWED_EXTENSIONS={'png', 'jpg', 'jpeg', 'gif', 'mp4', 'mov', 'avi'},
@@ -361,4 +361,5 @@ if __name__ == '__main__':
     with app.app_context():
         db.create_all()
         create_admin_user()
+    port=int(os.environ.get("PORT", 5000)) 
     app.run(debug=True, port=5000)
