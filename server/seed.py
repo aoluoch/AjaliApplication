@@ -5,8 +5,8 @@ from werkzeug.security import generate_password_hash
 def seed_admins():
     admin1 = User(
         username="admin1",
-        email="admin1@example.com",
-        password_hash=generate_password_hash("password123"),
+        email="admin@gmail.com",
+        password_hash=generate_password_hash("admin123"),
         is_admin=True
     )
     admin2 = User(
